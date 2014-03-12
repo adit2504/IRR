@@ -1,0 +1,311 @@
+% This file was created with JabRef 2.9.2.
+% Encoding: Cp1252
+
+@MISC{MemComp,
+  author = {Balasundaram, S.P.},
+  title = {Increasing the battery life of a mobile computing system in a reduced
+	power state through memory compression},
+  month = dec # {~20},
+  year = {2007},
+  note = {US Patent App. 11/450,214},
+  publisher = {Google Patents},
+  url = {http://www.google.com/patents/US20070291571}
+}
+
+@INPROCEEDINGS{MultiCores,
+  author = {van Berkel, C. H. (Kees)},
+  title = {Multi-core for Mobile Phones},
+  booktitle = {Proceedings of the Conference on Design, Automation and Test in Europe},
+  year = {2009},
+  series = {DATE '09},
+  pages = {1260--1265},
+  address = {3001 Leuven, Belgium, Belgium},
+  publisher = {European Design and Automation Association},
+  acmid = {1874924},
+  isbn = {978-3-9810801-5-5},
+  location = {Nice, France},
+  numpages = {6},
+  url = {http://dl.acm.org/citation.cfm?id=1874620.1874924}
+}
+
+@ARTICLE{Mem-Cache,
+  author = {Bournoutian, Garo and Orailoglu, Alex},
+  title = {Application-aware Adaptive Cache Architecture for Power-sensitive
+	Mobile Processors},
+  journal = {ACM Trans. Embed. Comput. Syst.},
+  year = {2013},
+  volume = {13},
+  pages = {41:1--41:26},
+  number = {3},
+  month = dec,
+  acmid = {2539037},
+  address = {New York, NY, USA},
+  articleno = {41},
+  doi = {10.1145/2539036.2539037},
+  issn = {1539-9087},
+  issue_date = {December 2013},
+  keywords = {application-aware, dynamic, low-power cache design, mobile processors,
+	power-sensitive},
+  numpages = {26},
+  publisher = {ACM},
+  url = {http://doi.acm.org/10.1145/2539036.2539037}
+}
+
+@INPROCEEDINGS{LinuxGov,
+  author = {Carroll, Aaron and Heiser, Gernot},
+  title = {Mobile Multicores: Use Them or Waste Them},
+  booktitle = {Proceedings of the Workshop on Power-Aware Computing and Systems},
+  year = {2013},
+  series = {HotPower '13},
+  pages = {12:1--12:5},
+  address = {New York, NY, USA},
+  publisher = {ACM},
+  acmid = {2525850},
+  articleno = {12},
+  doi = {10.1145/2525526.2525850},
+  isbn = {978-1-4503-2458-8},
+  location = {Farmington, Pennsylvania},
+  numpages = {5},
+  url = {http://doi.acm.org/10.1145/2525526.2525850}
+}
+
+@TECHREPORT{NonVolatile,
+  author = {Chiu, P. and Lu, P. and Xin Z},
+  title = {Energy Efficiency Enhancement in Mobile Processor Memory Design Using
+	Emerging Nonvolatile Memory},
+  institution = {University of Berkley},
+  year = {2013},
+  owner = {Aditya},
+  timestamp = {2014.03.02},
+  url = {http://www.eecs.berkeley.edu/~pfchiu/EE241_midtermReport.pdf}
+}
+
+@ARTICLE{SNAP/LE,
+  author = {Ekanayake, Virantha and Kelly,IV, Clinton and Manohar, Rajit},
+  title = {An Ultra Low-power Processor for Sensor Networks},
+  journal = {SIGARCH Comput. Archit. News},
+  year = {2004},
+  volume = {32},
+  pages = {27--36},
+  number = {5},
+  month = oct,
+  acmid = {1024397},
+  address = {New York, NY, USA},
+  doi = {10.1145/1037947.1024397},
+  issn = {0163-5964},
+  issue_date = {December 2004},
+  keywords = {asynchronous, event-driven, low-energy, picojoule computing, sensor
+	network processor, sensor networks, wireless},
+  numpages = {10},
+  publisher = {ACM},
+  url = {http://doi.acm.org/10.1145/1037947.1024397}
+}
+
+@INPROCEEDINGS{ABB,
+  author = {Gammie, G. and et al.},
+  title = {A 45nm 3.5G Baseband-and-Multimedia Application Processor using Adaptive
+	Body-Bias and Ultra-Low-Power Techniques},
+  booktitle = {Solid-State Circuits Conference, 2008. ISSCC 2008. Digest of Technical
+	Papers. IEEE International},
+  year = {2008},
+  pages = {258-611},
+  month = {Feb},
+  doi = {10.1109/ISSCC.2008.4523155},
+  keywords = {low-power electronics;multimedia communication;multiprocessing systems;system-on-chip;ARM1176;EDGE/GPRS/GSM;HSUPA/HSDPA;Java;MP3
+	audio;MPEG-4 video streaming;TMS320C55x DSP;WCDMA;adaptive body-bias;analog
+	design platform;baseband application processor;image processor;low-power
+	digital design;mobile standards;multimedia application processor;multimedia
+	multiprocessor engine;system on chip integration;ultra-low-power
+	techniques;Baseband;Digital audio players;GSM;Ground penetrating
+	radar;Java;MPEG 4 Standard;Multiaccess communication;Multimedia systems;Streaming
+	media;System-on-a-chip}
+}
+
+@ARTICLE{Intel,
+  author = {Gerosa, G. and Curtis, S. and D'Addeo, M. and Bo Jiang and Kuttanna,
+	B. and Merchant, F. and Patel, B. and Taufique, M.H. and Samarchi,
+	H.},
+  title = {A Sub-2 W Low Power IA Processor for Mobile Internet Devices in 45
+	nm High-k Metal Gate CMOS},
+  journal = {Solid-State Circuits, IEEE Journal of},
+  year = {2009},
+  volume = {44},
+  pages = {73-82},
+  number = {1},
+  month = {Jan},
+  doi = {10.1109/JSSC.2008.2007170},
+  issn = {0018-9200},
+  keywords = {CMOS digital integrated circuits;UHF integrated circuits;high-k dielectric
+	thin films;low-power electronics;microprocessor chips;mobile computing;24
+	KB data L1 caches;32 KB instruction;512 KB L2 cache;533 MT/s dual-mode
+	front-side-bus;GTL;Intel architecture processor;floating point execution
+	units;frequency 1.86 GHz;high-k metal gate CMOS;mainstream ultramobile
+	PCs;mobile Internet devices;pipeline;power 2 W;size 45 nm;synthetic
+	power-virus test;temperature 90 degC;thermal design power consumption;voltage
+	1.0 V;x86 front end execution unit;CMOS process;Design optimization;High
+	K dielectric materials;High-K gate dielectrics;Internet;Manufacturing
+	processes;Personal communication networks;Pipelines;Process design;Low
+	power Intel Architecture processor;mobile internet devices}
+}
+
+@INPROCEEDINGS{HierarchicalPower,
+  author = {Hattori, T and et al.},
+  title = {Hierarchical Power Distribution and Power Management Scheme for a
+	Single Chip Mobile Processor},
+  booktitle = {Proceedings of the 43rd Annual Design Automation Conference},
+  year = {2006},
+  series = {DAC '06},
+  pages = {292--295},
+  address = {New York, NY, USA},
+  publisher = {ACM},
+  acmid = {1146986},
+  doi = {10.1145/1146909.1146986},
+  isbn = {1-59593-381-6},
+  keywords = {VLSI, mobile processor, partial power off, power domain},
+  location = {San Francisco, CA, USA},
+  numpages = {4},
+  url = {http://doi.acm.org/10.1145/1146909.1146986}
+}
+
+@ARTICLE{LowPower2005,
+  author = {Hempstead, Mark and Tripathi, Nikhil and Mauro, Patrick and Wei,
+	Gu-Yeon and Brooks, David},
+  title = {An Ultra Low Power System Architecture for Sensor Network Applications},
+  journal = {SIGARCH Comput. Archit. News},
+  year = {2005},
+  volume = {33},
+  pages = {208--219},
+  number = {2},
+  month = may,
+  acmid = {1069988},
+  address = {New York, NY, USA},
+  doi = {10.1145/1080695.1069988},
+  issn = {0163-5964},
+  issue_date = {May 2005},
+  numpages = {12},
+  publisher = {ACM},
+  url = {http://doi.acm.org/10.1145/1080695.1069988}
+}
+
+@OTHER{LDO,
+  author = {Lueders, M. and Eversmann, B. and Gerber, J. and Huber, K. and Kuhn,
+	R. and Zwerg, M. and Schmitt-Landsiedel, D. and Brederlow, R.},
+  doi = {10.1109/TVLSI.2013.2290083},
+  issn = {1063-8210},
+  journal = {Very Large Scale Integration (VLSI) Systems, IEEE Transactions on},
+  keywords = {Digitally enhanced analog;energy harvesting;fully integrated voltage
+	regulator;power management unit;ultra-low-power microcontroller.},
+  number = {99},
+  pages = {1-1},
+  title = {Architectural and Circuit Design Techniques for Power Management
+	of Ultra-Low-Power MCU Systems},
+  volume = {PP},
+  year = {2013}
+}
+
+@INPROCEEDINGS{AVR,
+  author = {Necchi, L. and Lavagno, L. and Pandini, D. and Vanzago, L.},
+  title = {An ultra-low energy asynchronous processor for wireless sensor networks},
+  booktitle = {Asynchronous Circuits and Systems, 2006. 12th IEEE International
+	Symposium on},
+  year = {2006},
+  pages = {8 pp.-85},
+  month = {March},
+  doi = {10.1109/ASYNC.2006.9},
+  issn = {1522-8681},
+  keywords = {asynchronous circuits;logic design;low-power electronics;microprocessor
+	chips;wireless sensor networks;0.54 V;1.2 V;130 nm;14 pJ;8 bit;AVR
+	instruction set architecture;ultra-low energy asynchronous processor;wireless
+	sensor networks;Asynchronous circuits;Clocks;Costs;Electromagnetic
+	interference;Energy consumption;Frequency estimation;Manufacturing
+	automation;Medical services;Web page design;Wireless sensor networks;AVR
+	CPU.;Wireless sensor networks;desynchronization;low EMI;low-power;lowenergy}
+}
+
+@INPROCEEDINGS{HD/SF,
+  author = {Ramirez, R.I. and Rubio, E.H. and Viveros, A.M.},
+  title = {Energy consumption in mobile computing},
+  booktitle = {Electronics, Communications and Computing (CONIELECOMP), 2013 International
+	Conference on},
+  year = {2013},
+  pages = {132-137},
+  month = {March},
+  doi = {10.1109/CONIELECOMP.2013.6525773},
+  keywords = {energy consumption;mobile computing;multi-threading;multiprocessing
+	systems;parallel processing;power aware computing;digital entertainment;energy
+	consumption;hardware architect;mobile application developer;mobile
+	communication technology;mobile computing;mobile device;multicore
+	processor;multithreading programming;parallel computing;power consumption;process
+	scheduling;Energy Consumption;Mobile Computing;Multithreading;Parallel
+	Computing;Systems-On-Chip}
+}
+
+@INPROCEEDINGS{FPGA,
+  author = {Tuan, Tim and Kao, Sean and Rahman, Arif and Das, Satyaki and Trimberger,
+	Steve},
+  title = {A 90Nm Low-power FPGA for Battery-powered Applications},
+  booktitle = {Proceedings of the 2006 ACM/SIGDA 14th International Symposium on
+	Field Programmable Gate Arrays},
+  year = {2006},
+  series = {FPGA '06},
+  pages = {3--11},
+  address = {New York, NY, USA},
+  publisher = {ACM},
+  acmid = {1117203},
+  doi = {10.1145/1117201.1117203},
+  isbn = {1-59593-292-5},
+  keywords = {FPGAs, field-programmable gate arrays, low-power design, programmable
+	logic},
+  location = {Monterey, California, USA},
+  numpages = {9},
+  url = {http://doi.acm.org/10.1145/1117201.1117203}
+}
+
+@ARTICLE{FFT,
+  author = {Wang, A. and Chandrakasan, A.},
+  title = {A 180-mV subthreshold FFT processor using a minimum energy design
+	methodology},
+  journal = {Solid-State Circuits, IEEE Journal of},
+  year = {2005},
+  volume = {40},
+  pages = {310-319},
+  number = {1},
+  month = {Jan},
+  doi = {10.1109/JSSC.2004.837945},
+  issn = {0018-9200},
+  keywords = {CMOS logic circuits;CMOS memory circuits;coprocessors;digital signal
+	processing chips;fast Fourier transforms;logic design;low-power electronics;0.18
+	micron;10 kHz;180 mV;350 mV;CMOS digital integrated circuits;CMOS
+	logic process;CMOS memory circuits;clock frequencies;coprocessors;digital
+	signal processors;fast Fourier transform processor;leakage currents;logic
+	design;minimum energy analysis;minimum energy design;subthreshold
+	CMOS circuits;subthreshold FFT processor;supply voltage;threshold
+	voltage;Circuit analysis;Clocks;Design methodology;Energy dissipation;Frequency
+	estimation;Logic design;Logic devices;Power supplies;Threshold voltage;Wireless
+	sensor networks;CMOS digital integrated circuits;CMOS memory circuits;coprocessors;design
+	methodology;digital signal processors;leakage currents;logic design;subthreshold
+	CMOS circuits}
+}
+
+@INPROCEEDINGS{SmartDust,
+  author = {Warneke, B.A. and Pister, K.S.J.},
+  title = {An ultra-low energy microcontroller for Smart Dust wireless sensor
+	networks},
+  booktitle = {Solid-State Circuits Conference, 2004. Digest of Technical Papers.
+	ISSCC. 2004 IEEE International},
+  year = {2004},
+  pages = {316-317 Vol.1},
+  month = {Feb},
+  doi = {10.1109/ISSCC.2004.1332721},
+  issn = {0193-6530},
+  keywords = {digital control;distributed sensors;intelligent sensors;low-power
+	electronics;microcontrollers;reduced instruction set computing;wireless
+	sensor networks;1 V;5.9 muW;500 kHz;Smart Dust wireless sensor networks;datapath
+	sleep time;digital control;independent subsystems;integrated oscillators;load-store
+	RISC;low power features;massive distributed sensor networks;rapid
+	power-cycling;sensor interface circuits;sensor receiving;sensor sampling;sensor
+	transmission;ultralow energy microcontroller;Clocks;Costs;Decoding;Energy
+	consumption;Intelligent sensors;Microcontrollers;Optical receivers;Oscillators;Sensor
+	arrays;Wireless sensor networks}
+}
+

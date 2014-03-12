@@ -1,0 +1,120 @@
+\documentclass[journal]{IEEEtran}
+\usepackage{cite}
+\usepackage{placeins}
+\ifCLASSINFOpdf
+ \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+ \graphicspath{{Pics/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+\fi
+\hyphenation{op-tical net-works semi-conduc-tor}
+\begin{document}
+\title{Ultra Low Energy Microcontroller Architectures}
+\author{Aditya Tandon,~\IEEEmembership{at3g10@sotn.ac.uk,~University of Southampton} 
+\thanks{}}
+% The paper headers
+\markboth{Individual Research Review} %
+{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
+\maketitle
+
+\begin{abstract}
+%\boldmath
+The abstract goes here.
+\end{abstract}
+\IEEEpeerreviewmaketitle
+
+\section{Introduction}
+\IEEEPARstart{T}{his} report looks into low power and energy techniques for processor architectures 
+ 
+\hfill \today
+
+\section{Asynchronous design}
+In a field of sensor networks asynchronous processors and microcontrollers have been gaining popularity as they lead to energy efficient designs. The basic principle is that these designs function without a global clock and hence reduce the number of unwanted switching activities in the circuit \cite{SNAP/LE}, \cite{LowPower2005}. To compensate for no clock, the designs usually employ extra hardware for a handshaking protocol \cite{SNAP/LE}. To further conserve energy these designs are event driven \cite{SNAP/LE}, \cite{LowPower2005}, \cite{AVR}. In such a system, the controller is mostly in a state of sleep until it is asked to perform a computation by an event. After performing the task the controller goes back to a sleep state thereby minimizing its active energy \cite{SNAP/LE}, \cite{LowPower2005}. Research has shown that there is no necessary software overhead for these systems due to their event driven nature \cite{SNAP/LE}, \cite{LowPower2005}. This is because these microcontrollers are used for a set of pre-defined tasks and can be simplified. For example, interrupts can be processed as events and there is no overhead to handle concurrent tasks \cite{SNAP/LE}, \cite{LowPower2005}. Designs can be further simplified by employing an in-order design which reduces the amount of hardware and therefore the amount of energy \cite{LowPower2005}, \cite{SmartDust}. \\
+
+It can be observed that event driven architectures should have a minimal transition time from a sleep state to an active state. The SNAP/LE architecture addresses this concern by employing an event queue \cite{SNAP/LE}. This resembles a FIFO handler and tasks are executed if there is an event token present in the queue. If there is a token, the appropriate event handler associated with the token is looked up and the task is executed. After executing the task the processor goes into a 'sleep' state if there is no token present \cite{SNAP/LE}. The time taken by the processor to transition between an active and sleep state is the time taken for a token to go through the event queue \cite{SNAP/LE}. The length of the queue can be optimized so that this process is in the order of tens of nanoseconds and therefore this procedure saves energy and is also efficient \cite{SNAP/LE}. \\
+
+Typically these designs can be modularised and stress can be taken off the microcontroller by employing hardware accelerators \cite{SNAP/LE}, \cite{LowPower2005}. Hempstead et al. \cite{LowPower2005} used the microcontroller only for computational intensive tasks and a separate event processor was employed which was effectively a hard-coded state machine to handle events which required light computation. This reduced the active and leakage power of the main controller. Another type accelerator used was the Message Coprocessor which was responsible for forming and forwarding incoming messages from the radio unit. Timing operations commonly found in wireless applications can be handled by a Timer Coprocessor and therefore can lead to a simplistic, energy efficient implementation for the microcontroller at the expensive of some additional hardware \cite{LowPower2005}. An architectural implementation of such a system can be seen from Figure \ref{Figure:Async}. \\
+	
+	\begin{figure}[h]
+	   \centering
+	   \includegraphics[width = 8cm]{Async}
+	   \caption{Event driven design (reproduced from \cite{LowPower2005}).}
+	   \label{Figure:Async}
+	\end{figure}	
+	\FloatBarrier
+	
+The steps taken in desynchronization involve replacing the clock tree with local, asynchronous controllers and converting the flip-flops into latches \cite{AVR}. This was demonstrated by Neechi et al. \cite{AVR} where a synchronous AVR microcontroller was used as a template to create an asynchronous version. It was found that the asynchronous controller was about 5 times more energy efficient than the synchronous one \cite{AVR}. The amount of energy that these prototype processors have taken to execute a particular instruction has been in the range of 10pJ – 14pJ assuming an operating voltage of 1.2V and about 2.7pJ/instruction at 0.54V \cite{SNAP/LE}, \cite{AVR}, \cite{SmartDust}.
+	 
+\section{Low power design techniques}
+\subsection{Low power memory}
+Over the years researchers have come up with different techniques to mitigate energy loss due to memory. A proposal for an adaptive cache for mobile processors could help reduce power \cite{Mem-Cache}. The L2 caches on mobile phones have been found to have access patterns that are not correlated or balanced and therefore there is scope to dynamically adjusting the cache to match the application using it \cite{Mem-Cache}. The compiler does an offline analysis of the application before run-time to determine parameters such as global average miss rates and access rates. Cache access is also monitored during run-time and the run-time information in conjunction with the offline material is used to enlarge or decrease the size of the cache dynamically depending on the need \cite{Mem-Cache}. This proves useful as memory is used much more efficiently. Also, the leakage power is reduced as there are fewer idle cells. This technique was found to give a 13\% - 29\% reduction in power consumption (using benchmark programs) but there was a small trade-off for speed and area to incorporate this \cite{Mem-Cache}.\\
+
+	\begin{figure}[h]
+	   \centering
+	   \includegraphics[width = 5cm]{AdaptiveCache}
+	   \caption{Adaptive cache design (reproduced from \cite{Mem-Cache}).}
+	   \label{Figure:Mem-Cache}
+	\end{figure}	
+	\FloatBarrier
+
+Another technique to reduce power is memory compression \cite{MemComp}. Here, a part of the data in volatile memory is compressed in order to reduce the number of logic elements that have to be self-refreshed when a device is turned into a low power state. Rest of the memory can be powered off and therefore the battery life is extended \cite{MemComp}. When there is a request to put a device into a low power state, the memory compression logic takes blocks from a designated memory, compresses it using a compression algorithm and then stores these blocks back to memory. A decompression procedure is followed when the device is in the active state \cite{MemComp}. The compression logic can be implemented in hardware or software and induces some overhead on the battery while performing compression but the power saved by compressing data outweighs this overhead \cite{MemComp}.\\
+
+Non-volatile memories are another area of interest for power reduction and even in performance enhancement \cite{NonVolatile}. Resistive Random Access Memory (RRAM) is a piece of memory that could be used as a substitute for SRAMs on mobile devices \cite{NonVolatile}. It was found that an RRAM with a crosspoint structure that uses a diode as a select cell reduces leakage current. This is because the resistance goes up as voltage decreases and the leakage current paths are cut-off \cite{NonVolatile}. This structure is also area efficient as multi-layered structures can be made \cite{NonVolatile}. Investigation is still going into this area as peripheral circuit design is harder if RRAMs are used but it could be used as a technique to reduce energy and power \cite{NonVolatile}.\\
+
+Many other techniques can be used to reduce power. An Intel processor for mobile devices reduces the leakage power in the L2 cache \cite{Intel}. The data arrays in the cache continue to be in the ‘sleep’ mode until a ‘Hit’ signal is generated. Even when there is a hit, only the relevant data array is charged so that it can be activated while the other arrays continue to be in the low power mode \cite{Intel}. This is a memory partitioning technique and is widely used to mitigate leakage power \cite{LowPower2005}, \cite{Intel}.
+
+\subsection{Subthreshold libraries}
+\begin{itemize}
+	\item Minimum energy point analysis \cite{FFT}
+	\item Design of subthreshold libraries \cite{FFT}
+\end{itemize}
+
+\section{Power management schemes}
+\subsection{Power management}
+\begin{itemize}
+	\item Hierarchical power domains \cite{HierarchicalPower}
+	\item Reduce sleep to active mode transition \cite{LDO}
+	\item Digitally adaptive Low Drop Oscillator to control current drive. Discrete load adaptive scheme \cite{LDO}
+	\item Intel Architecture processor for mobile internet devices \cite{Intel}
+	\item Power efficient algorithms \cite{Intel}
+	\item Different power states and power gating \cite{Intel} 
+\end{itemize}
+
+\subsection{DVFS}
+\begin{itemize}
+	\item Choosing correct operating point: frequency and right number of cores \cite{LinuxGov}
+	\item Temperature aware DVFS in mobile devices \cite{TempDVFS}
+	\item General concept \cite{AVR}
+\end{itemize}
+
+\section{Other techniques}
+\begin{itemize}
+	\item Adaptive Body Bias: FBB to improve performance and RBB to reduce power. Only applied to parts of the chip \cite{ABB}
+	\item Heterogeneous multicores and understanding the connections between hardware and software \cite{HD/SF} \cite{MultiCores}
+	\item Low power FPGA on mobile phones: power gating per tile, low leakage SRAM and other techniques to reduce power \cite{FPGA}
+\end{itemize}
+
+\section{Conclusion}
+The conclusion goes here.
+
+\appendices
+
+\section*{Acknowledgment}
+The authors would like to thank...
+
+
+% Can use something like this to put references on a page
+% by themselves when using endfloat and the captionsoff option.
+\ifCLASSOPTIONcaptionsoff
+  \newpage
+\fi
+
+
+\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+\bibliography{IEEEabrv,References}
+
+\end{document}
