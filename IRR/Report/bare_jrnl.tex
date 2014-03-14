@@ -83,12 +83,12 @@ Therefore, it can be observed that operating in the subthreshold region can help
 	\item Different power states and power gating \cite{Intel} 
 \end{itemize}
 
-\subsection{DVFS}
-\begin{itemize}
-	\item Choosing correct operating point: frequency and right number of cores \cite{LinuxGov}
-	\item Temperature aware DVFS in mobile devices \cite{TempDVFS}
-	\item General concept \cite{AVR}
-\end{itemize}
+\subsection{Dynamic voltage and frequency scaling}
+
+Dynamic voltage and frequency scaling (DVFS) is used ubiquitously to improve energy performance in processors \cite{LinuxGov}, \cite{TempDVFS}, \cite{48Core}. Power is proportional to frequency and the square of supply voltage so scaling down these parameters saves energy \cite{TempDVFS}. Although delay increases with a reduced voltage so applications that are not time critical can be performed at a lower voltage to avoid performance hits \cite{LinuxGov}. Multicores on mobile phones can be made much more energy efficient if they ran at an optimum operating point. This operating point is a combination of choosing the correct operating frequency and the number of cores used for an application \cite{LinuxGov}. Quite often, cores are under-utilized in order to save energy but this actually dissipates more energy as fewer cores are running intensive programs at a higher frequency. Instead of this, more cores can be made available and can operate at a lower frequency \cite{LinuxGov}. This increases the number of computation resources and also reduces the energy as the operating frequency is low. Also, the work gets executed faster and power dissipation outside the cores can be minimized as these components can be turned off once the computation is finished \cite{LinuxGov}. Carol and Heiser \cite{LinuxGov} have come up with a linux governor that actually implements this concept. Frequency is increased if a core is being over-utilized and vice versa. It also disables and enables cores based on their need and this could be a useful tool to incorporate onto devices as an energy saving of upto 25\% was observed in this case \cite{LinuxGov}.\\
+
+Dynamic Thermal Management (DTM) is another important aspect to consider when discussing DVFS \cite{TempDVFS}. If the temperature of a chip exceeds a certain thermal threshold the frequency has to be scaled down again to prevent the chip from over-heating. Once the temperature goes down the frequency is increased again and this would result in the thermal threshold being exceeded \cite{TempDVFS}. It can be observed that in some scenarios the operating frequency can oscillate between two frequencies due to DTM and this causes a degradation in power as the chip operates at an unstable frequency \cite{TempDVFS}. To mitigate this, Kim et al. \cite{TempDVFS} proposed a DVFS scheme based on an average frequency operating point so that the frequency is stable. Frequencies are sampled on a periodic basis when they exceed the thermal threshold and an average is formed once enough samples are collected \cite{TempDVFS}. This operating point can be re-sampled for different criteria if, for example, the frequency needs to be lowered or raised. This can lead to a reduction in energy and an energy saving of 12.7\% was observed in this scheme \cite{TempDVFS}.
+
 
 \section{Other techniques}
 \begin{itemize}
