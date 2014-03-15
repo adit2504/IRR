@@ -3,9 +3,9 @@ The style file: IEEEtran.bst
 Database file #1: IEEEabrv.bib
 Database file #2: References.bib
 Warning--entry type for "TempDVFS" isn't style-file defined
---line 190 of file References.bib
+--line 206 of file References.bib
 Warning--entry type for "LDO" isn't style-file defined
---line 204 of file References.bib
+--line 220 of file References.bib
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.

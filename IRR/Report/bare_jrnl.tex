@@ -74,14 +74,22 @@ Therefore, it can be observed that operating in the subthreshold region can help
 
 \section{Power management schemes}
 \subsection{Power management}
-\begin{itemize}
-	\item Hierarchical power domains \cite{HierarchicalPower}
-	\item Reduce sleep to active mode transition \cite{LDO}
-	\item Digitally adaptive Low Drop Oscillator to control current drive. Discrete load adaptive scheme \cite{LDO}
-	\item Intel Architecture processor for mobile internet devices \cite{Intel}
-	\item Power efficient algorithms \cite{Intel}
-	\item Different power states and power gating \cite{Intel} 
-\end{itemize}
+Chips on mobile phones are now moving towards a multi-core implementation to support the vast functionality that is in demand. The cores are usually heterogenous so that each of them can run at an independent frequency and hence utilized in the best possible way and also reduce dynamic power \cite{HierarchicalPower}. A single chip implementation makes it hard for power management schemes to achieve power reduction due to leakage currents. A multi-chip scheme paves way to implementing a partial power off scheme where unused chips can be powered off if they are not in use \cite{HierarchicalPower}. This gives rise to the concept of a power domain where different parts of a chip and also different chips can be isolated from each other in terms of power management \cite{HierarchicalPower}. Many domains can thus be created and power can be saved. Implementing power domains does pose some problems. For example, the shutdown elements between power domains need to be robust and reliable \cite{HierarchicalPower}. µI/O’s are used to route signals from domains that might be powered off. These are special circuits used to isolate such signals \cite{HierarchicalPower}. To minimize such additional signals, a hierarchical power domain scheme can be adopted which sets a level of precedence for certain domains \cite{HierarchicalPower}. So no µI/O’s are needed from a higher hierarchy to a lower one as the lower hierarchy cannot be on while the upper one is switched off. Figure \ref{Figure:Hier} illustrates a hierarchical structure that can be implemented on mobile phones.
+
+	\begin{figure}[h]
+	   \centering
+	   \includegraphics[width = 7cm]{Hier}
+	   \caption{Hierarchical power domains (reproduced from \cite{HierarchicalPower}).}
+	   \label{Figure:Hier}
+	\end{figure}	
+	\FloatBarrier
+
+Another problem is the rush current generated while switching on power domains \cite{HierarchicalPower}. Hattori et al. \cite{HierarchicalPower} described an efficient power switch design to minimize this rush current so that it can be made negligible. They observed very low leakage currents using this design and so the use of hierarchical power domains could be an effective way to save energy \cite{HierarchicalPower}. \\
+
+Power gating is another strategy that has been around for quite a while. Here, the processor is switched off due to switches inserted into the power rail \cite{LDO}. This causes a reduction in power but there are other components, such as state retention registers, power management unit and Low Drop Regulator (LDO) still remain active and contribute to leakage current \cite{LDO}. To mitigate this, Lueders et al. \cite{LDO} proposed a scheme based around the LDO. The idea was that a digitally adaptive LDO would drive the micro-controller unit and based on the requirements, it would adapt its drive current and hence reduce power management overhead in low frequency operations \cite{LDO}. Also, as the LDO is integrated onto the chip, it would be designed with a low output capacitance and therefore take up very little power during sleep and also have a quick transition wake up time \cite{LDO}. During sleep mode, the LDO can be disabled and it was shown that a power saving of a factor of 4.3 was achieved as compared to power gating \cite{LDO}. This was easier to implement than power gating as system partitioning was simple and no power switches had to be used \cite{LDO}. \\
+
+Other power management schemes, include the implementation of different power states in a system \cite{Intel}. For example, an Intel processor for mobile phones has 6 power states (C0 – C6) \cite{Intel}. The C0 state is the high frequency state and in C6 state the core power is shutdown \cite{Intel}. The intermediate states involve the power gating of different components such as the core clock, phase locked loops and flushing of L1 caches to reduce dynamic power \cite{Intel}.   
+
 
 \subsection{Dynamic voltage and frequency scaling}
 

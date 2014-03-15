@@ -49,6 +49,14 @@ B.~Warneke and K.~Pister, ``An ultra-low energy microcontroller for smart dust
   Digest of Technical Papers. ISSCC. 2004 IEEE International}, Feb 2004, pp.
   316--317 Vol.1.
 
+\bibitem{Mem-Cache}
+\BIBentryALTinterwordspacing
+G.~Bournoutian and A.~Orailoglu, ``Application-aware adaptive cache
+  architecture for power-sensitive mobile processors,'' \emph{ACM Trans. Embed.
+  Comput. Syst.}, vol.~13, no.~3, pp. 41:1--41:26, Dec. 2013. [Online].
+  Available: \url{http://doi.acm.org/10.1145/2539036.2539037}
+\BIBentrySTDinterwordspacing
+
 \bibitem{MemComp}
 \BIBentryALTinterwordspacing
 S.~Balasundaram, ``Increasing the battery life of a mobile computing system in
@@ -70,14 +78,6 @@ G.~Gerosa, S.~Curtis, M.~D'Addeo, B.~Jiang, B.~Kuttanna, F.~Merchant, B.~Patel,
   M.~Taufique, and H.~Samarchi, ``A sub-2 w low power ia processor for mobile
   internet devices in 45 nm high-k metal gate cmos,'' \emph{Solid-State
   Circuits, IEEE Journal of}, vol.~44, no.~1, pp. 73--82, Jan 2009.
-
-\bibitem{Mem-Cache}
-\BIBentryALTinterwordspacing
-G.~Bournoutian and A.~Orailoglu, ``Application-aware adaptive cache
-  architecture for power-sensitive mobile processors,'' \emph{ACM Trans. Embed.
-  Comput. Syst.}, vol.~13, no.~3, pp. 41:1--41:26, Dec. 2013. [Online].
-  Available: \url{http://doi.acm.org/10.1145/2539036.2539037}
-\BIBentrySTDinterwordspacing
 
 \bibitem{FFT}
 A.~Wang and A.~Chandrakasan, ``A 180-mv subthreshold fft processor using a
@@ -111,6 +111,11 @@ A.~Carroll and G.~Heiser, ``Mobile multicores: Use them or waste them,'' in
 \bibitem{TempDVFS}
 J.~Kim, Y.~Kim, and S.~Chung, ``Stabilizing cpu frequency and voltage for
   temperature-aware dvfs in mobile devices,'' pp. 1--1, 2013.
+
+\bibitem{48Core}
+J.~Howard and et~al., ``A 48-core ia-32 message-passing processor with dvfs in
+  45nm cmos,'' in \emph{Solid-State Circuits Conference Digest of Technical
+  Papers (ISSCC), 2010 IEEE International}, Feb 2010, pp. 108--109.
 
 \bibitem{ABB}
 G.~Gammie and et~al., ``A 45nm 3.5g baseband-and-multimedia application
