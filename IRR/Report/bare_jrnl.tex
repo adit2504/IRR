@@ -1,6 +1,7 @@
 \documentclass[journal]{IEEEtran}
 \usepackage{cite}
 \usepackage{placeins}
+\usepackage{upgreek}
 \ifCLASSINFOpdf
  \usepackage[pdftex]{graphicx}
   % declare the path(s) where your graphic files are
@@ -74,7 +75,7 @@ Therefore, it can be observed that operating in the subthreshold region can help
 
 \section{Power management schemes}
 \subsection{Power management}
-Chips on mobile phones are now moving towards a multi-core implementation to support the vast functionality that is in demand. The cores are usually heterogenous so that each of them can run at an independent frequency and hence utilized in the best possible way and also reduce dynamic power \cite{HierarchicalPower}. A single chip implementation makes it hard for power management schemes to achieve power reduction due to leakage currents. A multi-chip scheme paves way to implementing a partial power off scheme where unused chips can be powered off if they are not in use \cite{HierarchicalPower}. This gives rise to the concept of a power domain where different parts of a chip and also different chips can be isolated from each other in terms of power management \cite{HierarchicalPower}. Many domains can thus be created and power can be saved. Implementing power domains does pose some problems. For example, the shutdown elements between power domains need to be robust and reliable \cite{HierarchicalPower}. µI/O’s are used to route signals from domains that might be powered off. These are special circuits used to isolate such signals \cite{HierarchicalPower}. To minimize such additional signals, a hierarchical power domain scheme can be adopted which sets a level of precedence for certain domains \cite{HierarchicalPower}. So no µI/O’s are needed from a higher hierarchy to a lower one as the lower hierarchy cannot be on while the upper one is switched off. Figure \ref{Figure:Hier} illustrates a hierarchical structure that can be implemented on mobile phones.
+Chips on mobile phones are now moving towards a multi-core implementation to support the vast functionality that is in demand. The cores are usually heterogenous so that each of them can run at an independent frequency and hence utilized in the best possible way and also reduce dynamic power \cite{HierarchicalPower}. A single chip implementation makes it hard for power management schemes to achieve power reduction due to leakage currents. A multi-chip scheme paves way to implementing a partial power off scheme where unused chips can be powered off if they are not in use \cite{HierarchicalPower}. This gives rise to the concept of a power domain where different parts of a chip and also different chips can be isolated from each other in terms of power management \cite{HierarchicalPower}. Many domains can thus be created and power can be saved. Implementing power domains does pose some problems. For example, the shutdown elements between power domains need to be robust and reliable \cite{HierarchicalPower}. $\mu$I/O’s are used to route signals from domains that might be powered off. These are special circuits used to isolate such signals \cite{HierarchicalPower}. To minimize such additional signals, a hierarchical power domain scheme can be adopted which sets a level of precedence for certain domains \cite{HierarchicalPower}. So no $\mu$I/O’s are needed from a higher hierarchy to a lower one as the lower hierarchy cannot be on while the upper one is switched off. Figure \ref{Figure:Hier} illustrates a hierarchical structure that can be implemented on mobile phones.
 
 	\begin{figure}[h]
 	   \centering
@@ -99,11 +100,38 @@ Dynamic Thermal Management (DTM) is another important aspect to consider when di
 
 
 \section{Other techniques}
-\begin{itemize}
-	\item Adaptive Body Bias: FBB to improve performance and RBB to reduce power. Only applied to parts of the chip \cite{ABB}
-	\item Heterogeneous multicores and understanding the connections between hardware and software \cite{HD/SF} \cite{MultiCores}
-	\item Low power FPGA on mobile phones: power gating per tile, low leakage SRAM and other techniques to reduce power \cite{FPGA}
-\end{itemize}
+FPGAs have been used to provide quick, cost effective solutions as they have re-programmable capabilities. Yet this re-configurable overhead is also the reason why they consume more power than ASIC designs as power management is more complex \cite{FPGA}. Tuan et al. \cite{FPGA} have investigated low power FPGA applications for battery powered devices and have used a variety of techniques to reduce power. They designed a low power called \textit{Pika} \cite{FPGA}. Voltage scaling was used to scale the core operating voltage to drastically reduce energy. A 1V operating voltage was found to give the best reductions without severely affecting performance \cite{FPGA}. It was found that SRAM cells were a major contributor towards leakage current. Subthreshold leakage was reduced by using a higher voltage threshold (Vt) and gate leakage was reduced by using thicker gate oxides \cite{FPGA}. Though this increases cost and area, the overall energy savings outweigh the cons. Finally, power gating was also used to reduce leakage current \cite{FPGA}. Unused blocks were turned off to save power. NMOS transistors were used as power gates as they are faster. Both NMOS and PMOS were not used in conjunction to save area \cite{FPGA}. Power gating in FPGAs is complex due to the amount of logic that can be gated. Therefore establishing what the smallest block that can be power gated is important \cite{FPGA}. In \textit{Pika}, a tile was the smallest unit that was power gated \cite{FPGA}. A tile here is used to define a configurable logic block (CLB) along with its relevant programmable switch matrix that connects it to other CLBs \cite{FPGA}. The SRAM cells in the switch matrix are not power gated to enable state retention when the rest of the core is powered down \cite{FPGA}. Power gating individual tiles helps in implementing a partial standby mode wherein some logic elements can be powered off and the rest can still remain active. This feature is implemented by having a programmable bit per tile \cite{FPGA}. The overall power savings for all these schemes is illustrated in Table \ref{tab:Impact} and it can be seen that a 46\% in active power reduction and 99\% standby power reduction was observed when compared to a normal FPGA with no power management \cite{FPGA}. There was however a trade-off with performance and area to enable these schemes \cite{FPGA}. \\
+
+\begin{table}[ht]
+\begin{center}
+
+	\begin{tabular}{| c | c | c |}
+	\hline
+	Technique & Active Power & Standby Power \\ [1ex] \hline 
+	Voltage scaling & 35\% & 23\% \\ [1ex] \hline
+	Low-leakage SRAM config  & 13\% & 43\% \\ [1ex] \hline
+	Power gating & 7\% & N/A \\ [1ex] \hline
+	Standby mode & N/A & 51\% \\ [1ex] \hline
+	Total power reduction & 46\% & 99\% \\ [1ex] \hline
+	\end{tabular}
+	\caption{Impact of power reduction techniques (reproduced from \protect\cite{FPGA})}
+	\label{tab:Impact}
+	
+\end{center}	
+\end{table}	
+
+Adaptive body biasing is another technique that was found to be beneficial. It is based on the simple idea that forward body biasing (FBB) decreases the threshold voltage and therefore increases performance and power while reverse body biasing (RBB) increases threshold voltage and reduces leakage current \cite{ABB}. This adaptive biasing is only applied to certain areas of the chip to suitably alter performance or power and this can give better power savings without affecting performance too much. Gammie et al. \cite{ABB} have described a tool, \textit{SmartPriMer}, which inserts power management modules into a piece of RTL code. These modules include power domains, adaptive body biasing and other such techniques to reduce power consumption \cite{ABB}. The tool also generates UPF information for the design that can be used on the later stages for design \cite{ABB}. These techniques were tested on mobile applications and a 37\% reduction in active power was observed \cite{ABB}. Figure \ref{Figure:ABBTech} shows the power reduction achieved when the different techniques are used in a 45nm system on chip (SoC) designed for a mobile phone \cite{ABB}. It can be observed that a mix of Adapative voltage scaling (AVS), RBB and DVFS are used to cut down power when the activity level of a processor is low and least power is consumed when the core is powered down \cite{ABB}.
+
+	\begin{figure}[h]
+	   \centering
+	   \includegraphics[width = 8cm]{ABBTech}
+	   \caption{Power reduction techniques during different processor activities (reproduced from \cite{ABB}).}
+	   \label{Figure:ABBTech}
+	\end{figure}	
+	\FloatBarrier
+
+Finally, a healthy interaction of hardware and software policies is a good way to reduce power \cite{HD/SF}. Most mobile phones have multi core processors so to make optimum use of these resources parallel computing and task scheduling can be used \cite{HD/SF}. Parallel computing involves executing instructions concurrently and an efficient task scheduler can map out a sequence of instructions that can be executed with minimal delay \cite{HD/SF}. The use of heterogeneous cores aids schedulers as cores can be catered to different applications and they make good use of the available resources and help in reducing energy as tasks are executed faster \cite{HD/SF}.   
+
 
 \section{Conclusion}
 The conclusion goes here.
